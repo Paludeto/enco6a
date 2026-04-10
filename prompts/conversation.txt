@@ -1,0 +1,77 @@
+ENCO6A - Conversa do Chat
+Data: 10 de abril de 2026
+================================================================================
+
+[USUÁRIO]
+create a branch req-04
+
+[ASSISTENTE]
+Criou e mudou para o branch `req-04`.
+
+--------------------------------------------------------------------------------
+
+[USUÁRIO]
+[Anexou PDF: main.pdf - ENCO6A – Aplicativo de Estacionamento no Campus]
+
+Utilizando o PDF como referência, implemente o REQ-04, apenas a parte do login
+persistente. Mantenha o código simples em um único arquivo .py, evitando
+dependências externas, tendo em vista que é apenas um esboço inicial para um
+protótipo de uma disciplina na faculdade.
+
+[ASSISTENTE]
+Criou o arquivo app.py implementando o login persistente com:
+- Interface gráfica via tkinter
+- Sessão salva em session.json após o primeiro login
+- Hash de senha com SHA-256 (hashlib)
+- Nas aberturas seguintes o app pula a tela de login automaticamente
+- Botão de logout que remove a sessão
+
+Usuários de teste:
+  aluno1 / senha123
+  aluno2 / abc456
+
+--------------------------------------------------------------------------------
+
+[USUÁRIO]
+faça interface web
+
+[ASSISTENTE]
+Reescreveu app.py como aplicação web usando apenas a stdlib do Python:
+- Servidor HTTP embutido via http.server
+- HTML/CSS inline servido pelo próprio servidor
+- Sessão persistida em session.json (token gerado com secrets.token_hex)
+- Cookie HttpOnly enviado ao browser (sem necessidade de login a cada abertura)
+- Rotas: GET / (tela principal ou login), POST /login, POST /logout
+- Sem dependências externas
+
+Acesso: http://localhost:8000
+
+--------------------------------------------------------------------------------
+
+[USUÁRIO]
+change file name to req04.py
+
+[ASSISTENTE]
+Renomeou app.py para req04.py.
+
+--------------------------------------------------------------------------------
+
+[USUÁRIO]
+create a pull request for the current branch
+
+[ASSISTENTE]
+- Commitou req04.py no branch req-04
+  Mensagem: "feat(req-04): web interface with persistent login"
+- Fez push do branch para origin (github.com/Paludeto/enco6a)
+- Criou o Pull Request via GitHub API:
+  https://github.com/Paludeto/enco6a/pull/2
+
+--------------------------------------------------------------------------------
+
+[USUÁRIO]
+create a .txt file containing the conversation in this chat.
+
+[ASSISTENTE]
+Criou o arquivo conversation.txt com o histórico desta conversa.
+
+================================================================================
